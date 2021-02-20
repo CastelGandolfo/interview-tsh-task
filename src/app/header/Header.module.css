@@ -1,0 +1,36 @@
+.MainHeader {
+  height: 15vh;
+  background: red;
+}
+
+.NavbarContainer {
+  margin: 0 auto;
+  height: 100%;
+  justify-content: space-between;
+  max-width: 1024px;
+}
+
+@media screen and (max-width: 768px) {
+  .NavbarContainer {
+    flex-wrap: wrap;
+  }
+
+  .LogoContainer {
+    order: 1;
+    width: 50%;
+  }
+  .LoginContainer {
+    order: 2;
+    width: 50%;
+  }
+  .SearchContainer {
+    order: 3;
+    width: 100%;
+  }
+  .ActiveContainer {
+    order: 4;
+  }
+  .PromoContainer {
+    order: 5;
+  }
+}

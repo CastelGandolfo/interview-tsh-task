@@ -10,8 +10,10 @@ const LoginForm = () => {
   };
 
   return (
-    <Form onSubmit={onSubmitClickHandler}>
-      <h1>Sign In</h1>
+    <Form onSubmit={onSubmitClickHandler} style={{ marginTop: '20vh' }}>
+      <h1 style={{ fontSize: '30px' }} className='mb-3'>
+        Login
+      </h1>
       <Form.Group controlId='username'>
         <Form.Label className='mb-0'>Username</Form.Label>
         <Form.Control
@@ -32,9 +34,17 @@ const LoginForm = () => {
         ></Form.Control>
       </Form.Group>
 
-      <Button type='submit' variant='primary' block>
+      <Button
+        type='submit'
+        variant='primary'
+        block
+        style={{ marginTop: '40px' }}
+      >
         Sign In
       </Button>
+      <a href='#!' className='text-secondary'>
+        Forgot password?
+      </a>
     </Form>
   );
 };
