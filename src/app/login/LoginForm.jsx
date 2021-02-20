@@ -13,7 +13,7 @@ const LoginForm = () => {
     <Form onSubmit={onSubmitClickHandler}>
       <h1>Sign In</h1>
       <Form.Group controlId='username'>
-        <Form.Label>Username</Form.Label>
+        <Form.Label className='mb-0'>Username</Form.Label>
         <Form.Control
           type='text'
           placeholder='Enter username'
@@ -23,7 +23,7 @@ const LoginForm = () => {
       </Form.Group>
 
       <Form.Group controlId='password'>
-        <Form.Label>Password</Form.Label>
+        <Form.Label className='mb-0'>Password</Form.Label>
         <Form.Control
           type='password'
           placeholder='Enter password'
@@ -32,7 +32,7 @@ const LoginForm = () => {
         ></Form.Control>
       </Form.Group>
 
-      <Button type='submit' variant='primary'>
+      <Button type='submit' variant='primary' block>
         Sign In
       </Button>
     </Form>

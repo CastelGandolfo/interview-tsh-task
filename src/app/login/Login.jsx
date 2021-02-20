@@ -6,46 +6,32 @@ import { AppRoute } from '../../routing/AppRoute.enum';
 
 import { ImgHalfPage } from './Login.module.css';
 
-import FormContainer from '../common/FormContainer';
+import FormContainer from '../common/formContainer/FormContainer';
 import LoginForm from './LoginForm';
+import Logo from '../common/logo/Logo';
 
 export const Login = () => {
   return (
     <>
-      <Row className='mr-0'>
+      <Row className='mr-0 justify-content-between'>
         <Col sm={12} lg={4} className='d-none d-lg-block'>
           <Image
             src='https://images.pexels.com/photos/5185041/pexels-photo-5185041.jpeg'
             className={ImgHalfPage}
           />
         </Col>
-        <FormContainer>
-          {/* <Link to={AppRoute.home}>Products page</Link> */}
+        <Col sm={12} lg={7}>
+          <Container>
+            <div style={{ margin: '52px 0' }}>
+              <Logo />
+            </div>
 
-          {/* {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />} */}
-          <LoginForm />
-        </FormContainer>
+            <FormContainer>
+              <LoginForm />
+            </FormContainer>
+          </Container>
+        </Col>
       </Row>
     </>
   );
 };
-
-{
-  /* <h2>Loginx</h2>
-          <form>
-            <div>
-              <label>
-                username:
-                <input name='username' />
-              </label>
-            </div>
-            <div>
-              <label>
-                password:
-                <input name='password' type='password' />
-              </label>
-            </div>
-            <button type='submit'>submit</button>
-          </form> */
-}
