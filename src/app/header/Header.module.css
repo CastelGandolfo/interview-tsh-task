@@ -10,7 +10,26 @@
   max-width: 1024px;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 768px) {
+  .NavbarContainer {
+    flex-wrap: wrap;
+  }
+
+  .LogoContainer {
+    flex: 1;
+  }
+  .LoginContainer {
+    flex: 1;
+  }
+  .SearchContainer {
+    flex: 1.5;
+  }
+  .CheckboxesContainer {
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
   .NavbarContainer {
     flex-wrap: wrap;
   }
@@ -27,10 +46,8 @@
     order: 3;
     width: 100%;
   }
-  .ActiveContainer {
+  .CheckboxesContainer {
     order: 4;
-  }
-  .PromoContainer {
-    order: 5;
+    width: 100%;
   }
 }
