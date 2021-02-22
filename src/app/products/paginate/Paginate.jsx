@@ -10,25 +10,21 @@ import {
 } from './Paginate.module.css'
 import ReactPaginate from 'react-paginate'
 
-const Paginate = ({ pages = 20, page = 1, keyword = '' }) => {
+const Paginate = ({ pages = 20, page = 10, keyword = '' }) => {
   const pageChangeValue = (e) => {
     console.log(e.selected + 1)
   }
   return (
     <>
       <div className={PaginateContainer}>
-        <Link className={page === 1 && DisabledLink}>First</Link>
-        {/* <Link>1</Link>
-        <Link>2</Link>
-        <Link>3</Link>
-        <div>...</div>
-        <Link>5</Link>
-        <Link>6</Link>
-        <Link>7</Link> */}
+        <Link to='#' className={page === 1 ? DisabledLink : undefined}>
+          First
+        </Link>
         <ReactPaginate
           pageClassName={PaginateList}
           previousLabel={''}
           nextLabel={''}
+          forcePage={page}
           breakLabel={'...'}
           breakClassName={'break-me'}
           pageCount={20}
@@ -40,7 +36,9 @@ const Paginate = ({ pages = 20, page = 1, keyword = '' }) => {
           activeClassName={'active'}
         />
 
-        <Link className={page === pages && DisabledLink}>Last</Link>
+        <Link to='#' className={page === pages ? DisabledLink : undefined}>
+          Last
+        </Link>
       </div>
     </>
   )
