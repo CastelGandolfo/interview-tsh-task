@@ -1,6 +1,6 @@
-import React from 'react';
-import Product from '../product/Product';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react'
+import Product from '../product/Product'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const products = [
   {
@@ -75,23 +75,20 @@ const products = [
     promo: false,
     active: true,
   },
-];
+]
 
 const ProductsContainer = () => {
   return (
     <Container className='mt-4' style={{ maxWidth: '1300px' }}>
-      <Row
-        className='mr-0 justify-content-between'
-        style={{ maxHeight: '20vh' }}
-      >
+      <Row className='mr-0 justify-content-between'>
         {products.map((product) => (
-          <Col sm={12} md={6} lg={3}>
+          <Col xs={12} sm={6} md={6} lg={3}>
             <Product product={product} />
           </Col>
         ))}
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default ProductsContainer;
+export default ProductsContainer

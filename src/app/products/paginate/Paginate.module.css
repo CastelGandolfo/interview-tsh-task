@@ -1,0 +1,19 @@
+.PaginateContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
+}
+.PaginateContainer > a {
+  color: black;
+  margin: 0 8px;
+}
+
+.PaginateList {
+  margin: 0 10px;
+}
+
+.DisabledLink {
+  pointer-events: none;
+  color: #9194a5;
+}

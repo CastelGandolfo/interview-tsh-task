@@ -54,3 +54,9 @@
     width: 100%;
   }
 }
+
+@media only screen and (min-height: 1100px) {
+  .MainHeader {
+    height: 144px;
+  }
+}
