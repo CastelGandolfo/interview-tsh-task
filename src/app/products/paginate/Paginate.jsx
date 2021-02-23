@@ -1,19 +1,33 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { changeProductsPage } from '../../actions/searchActions'
 import {
   PaginateContainer,
   PaginateList,
   SinglePage,
   DisabledLink,
+  ActivePage,
 } from './Paginate.module.css'
 import ReactPaginate from 'react-paginate'
 
-const Paginate = ({ pages = 20, page = 1, keyword = '' }) => {
+const Paginate = () => {
+  const dispatch = useDispatch()
+
   const pageChangeValue = (e) => {
-    console.log(e.selected + 1)
+    dispatch(changeProductsPage(e.selected + 1))
   }
+
+  const productList = useSelector((state) => state.productList)
+  const { loading, pages } = productList
+  const searchParameters = useSelector((state) => state.searchParameters)
+  const { page } = searchParameters
+
+  if (loading) {
+    return null
+  }
+
   return (
     <>
       <div className={PaginateContainer}>
@@ -24,16 +38,16 @@ const Paginate = ({ pages = 20, page = 1, keyword = '' }) => {
           pageClassName={PaginateList}
           previousLabel={''}
           nextLabel={''}
-          forcePage={page}
+          forcePage={page - 1}
           breakLabel={'...'}
           breakClassName={'break-me'}
-          pageCount={20}
+          pageCount={pages}
           marginPagesDisplayed={3}
           pageRangeDisplayed={2}
           containerClassName={'pagination'}
           // subContainerClassName={SinglePage}
           onPageChange={(e) => pageChangeValue(e)}
-          activeClassName={'active'}
+          activeClassName={ActivePage}
         />
 
         <Link to='#' className={page === pages ? DisabledLink : undefined}>

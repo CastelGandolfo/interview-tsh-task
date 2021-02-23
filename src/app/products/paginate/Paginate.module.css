@@ -21,3 +21,8 @@
   pointer-events: none;
   color: #9194a5;
 }
+
+.ActivePage {
+  color: #4460f7;
+  pointer-events: none;
+}

@@ -5,7 +5,7 @@ import {
   PRODUCT_LIST_FAIL,
 } from '../constants/productConstants'
 
-export const listProducts = (text, promo, active) => async (dispatch) => {
+export const listProducts = (text, promo, active, page) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
@@ -13,19 +13,22 @@ export const listProducts = (text, promo, active) => async (dispatch) => {
       ...(text !== '' && { search: text }),
       ...(promo && { promo }),
       ...(active && { active }),
-      page: 1,
+      ...(page && { page }),
       limit: 8,
     }
 
     const {
-      data: { items, meta },
+      data: {
+        items,
+        meta: { totalPages },
+      },
     } = await axios.get(`https://join-tsh-api-staging.herokuapp.com/products`, {
       params,
     })
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
-      payload: items,
+      payload: { items, totalPages },
     })
   } catch (error) {
     dispatch({
