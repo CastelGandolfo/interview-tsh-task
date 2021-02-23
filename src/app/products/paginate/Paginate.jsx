@@ -10,7 +10,7 @@ import {
 } from './Paginate.module.css'
 import ReactPaginate from 'react-paginate'
 
-const Paginate = ({ pages = 20, page = 10, keyword = '' }) => {
+const Paginate = ({ pages = 20, page = 1, keyword = '' }) => {
   const pageChangeValue = (e) => {
     console.log(e.selected + 1)
   }
