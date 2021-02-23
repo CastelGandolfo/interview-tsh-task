@@ -31,3 +31,21 @@ export const changeProductsPage = (number) => (dispatch) => {
     payload: number,
   })
 }
+
+export const changeScreenWidth = (screenWidth) => (dispatch, getState) => {
+  const {
+    searchParameters: { size },
+  } = getState()
+
+  if (screenWidth < 576 && size === 'desktop') {
+    dispatch({
+      type: RESIZE_WINDOW,
+      payload: 'mobile',
+    })
+  } else if (screenWidth > 575 && size === 'mobile') {
+    dispatch({
+      type: RESIZE_WINDOW,
+      payload: 'desktop',
+    })
+  }
+}

@@ -14,11 +14,11 @@ const ProductsContainer = () => {
   const productList = useSelector((state) => state.productList)
   const { products, loading } = productList
   const searchParameters = useSelector((state) => state.searchParameters)
-  const { text, promo, active, page } = searchParameters
+  const { text, promo, active, page, size } = searchParameters
 
   useEffect(() => {
-    dispatch(listProducts(text, promo, active, page))
-  }, [dispatch, text, promo, active, page])
+    dispatch(listProducts(text, promo, active, page, size))
+  }, [dispatch, text, promo, active, page, size])
 
   if (loading) {
     return <Loader />

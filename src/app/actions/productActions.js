@@ -5,16 +5,20 @@ import {
   PRODUCT_LIST_FAIL,
 } from '../constants/productConstants'
 
-export const listProducts = (text, promo, active, page) => async (dispatch) => {
+export const listProducts = (text, promo, active, page, size) => async (
+  dispatch
+) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
+
+    const productsPerPage = size === 'desktop' ? 8 : 4
 
     const params = {
       ...(text !== '' && { search: text }),
       ...(promo && { promo }),
       ...(active && { active }),
       ...(page && { page }),
-      limit: 8,
+      limit: productsPerPage,
     }
 
     const {
@@ -32,7 +36,7 @@ export const listProducts = (text, promo, active, page) => async (dispatch) => {
     })
   } catch (error) {
     dispatch({
-      type: PRODUCT_LIST_REQUEST,
+      type: PRODUCT_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
