@@ -3,6 +3,8 @@ import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_FAIL,
+  SHOW_PRODUCT_DETAILS,
+  CLOSE_PRODUCT_DETAILS,
 } from '../constants/productConstants'
 
 export const listProducts = (text, promo, active, page, size) => async (
@@ -43,4 +45,12 @@ export const listProducts = (text, promo, active, page, size) => async (
           : error.message,
     })
   }
+}
+
+export const showProductDetails = (product) => (dispatch) => {
+  dispatch({ type: SHOW_PRODUCT_DETAILS, payload: product })
+}
+
+export const closeProductDetails = () => (dispatch) => {
+  dispatch({ type: CLOSE_PRODUCT_DETAILS })
 }

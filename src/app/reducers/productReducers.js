@@ -2,6 +2,8 @@ import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_FAIL,
+  SHOW_PRODUCT_DETAILS,
+  CLOSE_PRODUCT_DETAILS,
 } from '../constants/productConstants'
 
 export const productListReducer = (
@@ -24,6 +26,28 @@ export const productListReducer = (
         loading: false,
         error: action.payload,
         pages: null,
+      }
+    default:
+      return state
+  }
+}
+
+export const productDetailsReducer = (
+  state = { product: null, showDetails: false },
+  action
+) => {
+  switch (action.type) {
+    case SHOW_PRODUCT_DETAILS:
+      return {
+        ...state,
+        product: action.payload,
+        showDetails: true,
+      }
+    case CLOSE_PRODUCT_DETAILS:
+      return {
+        ...state,
+        product: null,
+        showDetails: false,
       }
     default:
       return state

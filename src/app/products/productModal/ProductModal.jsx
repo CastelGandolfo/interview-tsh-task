@@ -1,17 +1,28 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 import BasicModal from '../../common/modal/BasicModal'
+import { closeProductDetails } from '../../actions/productActions'
 import { ModalSize, ImageContainer, CardInfo } from './ProductModal.module.css'
 
 const ProductModal = () => {
+  const dispatch = useDispatch()
+
+  const productDetails = useSelector((state) => state.productDetails)
+  const { product, showDetails } = productDetails
+
+  if (!product) {
+    return null
+  }
   return (
     <BasicModal
-      show={true}
-      onHide={console.log(10)}
+      show={showDetails}
+      onHide={() => dispatch(closeProductDetails())}
       contentClassName={ModalSize}
     >
       <div className={ImageContainer}>
         <img
-          src='https://picsum.photos/640/480?random=272'
+          src={product.image}
           className=' img-responsive'
           alt='Product image'
         ></img>
@@ -19,8 +30,8 @@ const ProductModal = () => {
 
       <div className={CardInfo}>
         <div>
-          <div className='title'>Ergonomic Concrete Shirt</div>
-          <div className='description'>Deleniti aliquid consequatur.</div>
+          <div className='title'>{product.name}</div>
+          <div className='description'>{product.description}</div>
         </div>
       </div>
     </BasicModal>

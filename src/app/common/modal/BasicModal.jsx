@@ -15,7 +15,7 @@ const BasicModal = ({ contentClassName, onHide, show, children }) => {
         // aria-labelledby='contained-modal-title-vcenter'
       >
         <ImCross className={CloseIcon} onClick={onHide} />
-        <Modal.Body>{children}</Modal.Body>
+        {children}
       </Modal>
     </Container>
   )

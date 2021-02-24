@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Card, Button } from 'react-bootstrap'
 import {
   ImageContainer,
@@ -9,9 +10,13 @@ import {
   UnavailableCover,
 } from './Product.module.css'
 
+import { showProductDetails } from '../../actions/productActions'
+
 import Rating from '../../common/rating/Rating'
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch()
+
   return (
     <Card className={ProductCard}>
       <div className={ImageContainer}>
@@ -34,7 +39,12 @@ const Product = ({ product }) => {
           <div>
             <Rating value={product.rating} />
             {product.active ? (
-              <Button variant='primary' block className='mt-2'>
+              <Button
+                variant='primary'
+                block
+                className='mt-2'
+                onClick={() => dispatch(showProductDetails(product))}
+              >
                 Show details
               </Button>
             ) : (
