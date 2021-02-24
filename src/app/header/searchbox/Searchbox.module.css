@@ -5,7 +5,12 @@
   transform: translateX(-150%);
   z-index: 10;
 }
+.SearchFormContainer {
+  display: flex;
+}
 
 .SearchForm {
-  border-bottom-right-radius: 4px;
+  /* display: flex; */
+  border-radius: 4px;
+  width: 100%;
 }

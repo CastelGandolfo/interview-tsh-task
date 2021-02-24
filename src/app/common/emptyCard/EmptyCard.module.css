@@ -1,0 +1,30 @@
+.BagIcon {
+  width: 36px;
+  height: 45px;
+  color: #b9bdcf;
+}
+
+.CardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto;
+  border-radius: 8px;
+  max-width: 600px;
+  height: 344px;
+
+  background-color: #ffffff;
+}
+
+.TextPrimary {
+  color: #1a1b1d;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.TextSecondary {
+  color: #9194a5;
+  font-weight: 600;
+  font-size: 14px;
+}

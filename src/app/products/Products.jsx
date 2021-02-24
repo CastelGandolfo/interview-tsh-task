@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import Header from '../header/Header'
 import ProductsContainer from './productsContainer/ProductsContainer'
 import Paginate from './paginate/Paginate'
+
+import ProductModal from './productModal/ProductModal'
 
 import { changeScreenWidth } from '../actions/searchActions'
 
@@ -20,6 +23,8 @@ export const Products = () => {
   }, [])
   return (
     <>
+      <ProductModal />
+      <Header />
       <ProductsContainer />
       <Paginate />
     </>

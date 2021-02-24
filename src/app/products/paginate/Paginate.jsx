@@ -6,7 +6,6 @@ import { changeProductsPage } from '../../actions/searchActions'
 import {
   PaginateContainer,
   PaginateList,
-  SinglePage,
   DisabledLink,
   ActivePage,
 } from './Paginate.module.css'
@@ -15,23 +14,27 @@ import ReactPaginate from 'react-paginate'
 const Paginate = () => {
   const dispatch = useDispatch()
 
-  const pageChangeValue = (e) => {
-    dispatch(changeProductsPage(e.selected + 1))
+  const pageChangeValue = (number) => {
+    dispatch(changeProductsPage(number + 1))
   }
 
   const productList = useSelector((state) => state.productList)
-  const { loading, pages } = productList
+  const { loading, pages, products } = productList
   const searchParameters = useSelector((state) => state.searchParameters)
   const { page } = searchParameters
 
-  if (loading) {
+  if (loading || products.length === 0) {
     return null
   }
 
   return (
     <>
       <div className={PaginateContainer}>
-        <Link to='#' className={page === 1 ? DisabledLink : undefined}>
+        <Link
+          to='#'
+          className={page === 1 ? DisabledLink : undefined}
+          onClick={() => pageChangeValue(0)}
+        >
           First
         </Link>
         <ReactPaginate
@@ -46,11 +49,15 @@ const Paginate = () => {
           pageRangeDisplayed={2}
           containerClassName={'pagination'}
           // subContainerClassName={SinglePage}
-          onPageChange={(e) => pageChangeValue(e)}
+          onPageChange={(e) => pageChangeValue(e.selected)}
           activeClassName={ActivePage}
         />
 
-        <Link to='#' className={page === pages ? DisabledLink : undefined}>
+        <Link
+          to='#'
+          className={page === pages ? DisabledLink : undefined}
+          onClick={() => pageChangeValue(pages - 1)}
+        >
           Last
         </Link>
       </div>

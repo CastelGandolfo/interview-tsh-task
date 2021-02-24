@@ -9,7 +9,7 @@ import {
   UnavailableCover,
 } from './Product.module.css'
 
-import Rating from '../rating/Rating'
+import Rating from '../../common/rating/Rating'
 
 const Product = ({ product }) => {
   return (

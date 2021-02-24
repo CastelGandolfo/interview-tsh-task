@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Form, Button } from 'react-bootstrap'
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const onSubmitClickHandler = () => {
-    console.log('login process');
-  };
+    console.log('login process')
+  }
 
   return (
     <Form onSubmit={onSubmitClickHandler} style={{ marginTop: '20vh' }}>
@@ -46,7 +46,7 @@ const LoginForm = () => {
         Forgot password?
       </a>
     </Form>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

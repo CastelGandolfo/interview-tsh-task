@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactStars from 'react-rating-stars-component';
-import { RiStarFill, RiStarLine, RiStarHalfFill } from 'react-icons/ri';
+import React from 'react'
+import ReactStars from 'react-rating-stars-component'
+import { RiStarFill, RiStarLine, RiStarHalfFill } from 'react-icons/ri'
 
 const Rating = ({ value, color = '#F9A52B' }) => {
   return (
@@ -11,8 +11,9 @@ const Rating = ({ value, color = '#F9A52B' }) => {
       isHalf={true}
       activeColor={color}
       color='#B1B5C9'
+      edit={false}
     />
-  );
-};
+  )
+}
 
-export default Rating;
+export default Rating

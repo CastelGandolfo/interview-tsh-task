@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import Loader from '../../common/loader/Loader'
 import Product from '../product/Product'
+import EmptyCard from '../../common/emptyCard/EmptyCard'
 
 import { Container, Row, Col } from 'react-bootstrap'
 
@@ -22,6 +23,12 @@ const ProductsContainer = () => {
 
   if (loading) {
     return <Loader />
+  } else if (products.length === 0) {
+    return (
+      <Container>
+        <EmptyCard />
+      </Container>
+    )
   }
 
   return (
