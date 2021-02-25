@@ -16,17 +16,6 @@
   text-align: right;
 }
 
-.Dropdown::after {
-  content: none !important;
-}
-
-.Avatar {
-  text-align: right;
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-}
-
 @media (min-width: 768px) {
   .NavbarContainer {
     flex-wrap: wrap;

@@ -23,3 +23,13 @@
   justify-content: space-between;
   padding: 5px 32px 56px 32px;
 }
+
+.ProductTitle {
+  color: var(--color-primary-text);
+  font-size: var(--font-size-details-title);
+}
+
+.ProductDescription {
+  color: var(--color-secondary-text);
+  font-size: var(--font-size-details-description);
+}

@@ -8,6 +8,7 @@ import { useHistory, Link } from 'react-router-dom'
 import Searchbox from './searchbox/Searchbox'
 import Logo from '../common/logo/Logo'
 import Checkboxes from './checkboxes/Checkboxes'
+import UserAvatar from './userAvatar/UserAvatar'
 
 import {
   MainHeader,
@@ -42,33 +43,18 @@ const Header = () => {
         <div className={CheckboxesContainer}>
           <Checkboxes />
         </div>
-        {loggedUser ? (
-          <div className={LoginContainer}>
-            <NavDropdown
-              alignRight
-              className={Dropdown}
-              title={
-                <img
-                  className={Avatar}
-                  src={loggedUser.avatar}
-                  alt={loggedUser.username}
-                />
-              }
-              id='basic-nav-dropdown'
-            >
-              <NavDropdown.Item href='#action/3.1'>Logout</NavDropdown.Item>
-            </NavDropdown>
-          </div>
-        ) : (
-          <div className={LoginContainer}>
+        <div className={LoginContainer}>
+          {loggedUser ? (
+            <UserAvatar />
+          ) : (
             <OutlineBtn
               style={{ width: '88px' }}
               onClickHandler={() => redirectToLogin()}
             >
               Log In
             </OutlineBtn>
-          </div>
-        )}
+          )}
+        </div>
       </Navbar>
     </header>
   )

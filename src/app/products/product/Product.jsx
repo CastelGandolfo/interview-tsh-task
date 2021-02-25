@@ -27,11 +27,7 @@ const Product = ({ product }) => {
         {!product.active && <div className={UnavailableCover}></div>}
         {product.promo && <div className={PromoLabel}>Promo</div>}
 
-        <img
-          src={product.image}
-          className='img-fluid img-responsive'
-          alt='Product image'
-        ></img>
+        <img src={product.image} alt='Product image'></img>
       </div>
 
       <Card.Body style={{ padding: '5px 16px 24px 16px' }}>

@@ -8,6 +8,7 @@ import EmptyCard from '../../common/emptyCard/EmptyCard'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { listProducts } from '../../actions/productActions'
+import { changeScreenWidth } from 'app/actions/searchActions'
 
 const ProductsContainer = () => {
   const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const ProductsContainer = () => {
   const { text, promo, active, page, size } = searchParameters
 
   useEffect(() => {
+    dispatch(changeScreenWidth(window.innerWidth))
     dispatch(listProducts(text, promo, active, page, size))
   }, [dispatch, text, promo, active, page, size])
 
@@ -33,7 +35,7 @@ const ProductsContainer = () => {
 
   return (
     <Container className='mt-4' style={{ maxWidth: '1300px' }}>
-      <Row className='justify-content-between'>
+      <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
         {products.map((product, index) => (
           <Col xs={12} sm={6} md={6} lg={3} key={index}>
             <Product product={product} />

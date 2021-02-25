@@ -1,5 +1,17 @@
+.MainContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0px;
+}
+
 .ImgHalfPage {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+@media (max-width: 1050px) {
+  .ImageContainer {
+    display: none;
+  }
 }

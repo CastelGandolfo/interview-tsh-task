@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './bootstrap.min.css'
+import './bootstrap2.min.css'
 import { AppProviders } from './providers/AppProviders'
 import { App } from './app/App'
 import './index.css'

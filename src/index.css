@@ -36,20 +36,9 @@ body {
   color: var(--color-primary-text);
 }
 
-.title {
-  font-size: var(--font-size-title);
-}
-
-.description {
-  color: var(--color-secondary-text);
-  font-size: var(--font-size-description);
-}
-
-.unavailable {
-  background-color: var(--color-secondary-text);
-  font-size: var(--font-size-description);
-}
-
 #basic-nav-dropdown::after {
   display: none;
+}
+#basic-nav-dropdown {
+  padding: 0;
 }

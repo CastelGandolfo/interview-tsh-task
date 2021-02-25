@@ -4,7 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import BasicModal from '../../common/modal/BasicModal'
 // import BasicModal from 'app/common/modal/BasicModal'
 import { closeProductDetails } from '../../actions/productActions'
-import { ModalSize, ImageContainer, CardInfo } from './ProductModal.module.css'
+import {
+  ModalSize,
+  ImageContainer,
+  CardInfo,
+  ProductTitle,
+  ProductDescription,
+} from './ProductModal.module.css'
 
 const ProductModal = () => {
   const dispatch = useDispatch()
@@ -22,17 +28,13 @@ const ProductModal = () => {
       contentClassName={ModalSize}
     >
       <div className={ImageContainer}>
-        <img
-          src={product.image}
-          className=' img-responsive'
-          alt='Product image'
-        ></img>
+        <img src={product.image} alt='Product image'></img>
       </div>
 
       <div className={CardInfo}>
         <div>
-          <div className='title'>{product.name}</div>
-          <div className='description'>{product.description}</div>
+          <div className={ProductTitle}>{product.name}</div>
+          <div className={ProductDescription}>{product.description}</div>
         </div>
       </div>
     </BasicModal>
