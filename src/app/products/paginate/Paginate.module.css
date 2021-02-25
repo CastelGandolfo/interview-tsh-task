@@ -1,28 +1,28 @@
+@import '../../../index.css';
+
 .PaginateContainer {
   display: flex;
   justify-content: center;
-  background-color: #f2f2f2;
+  background-color: var(--color-background);
   margin-bottom: 20px;
 }
 .PaginateContainer > a {
-  color: black;
+  color: var(--color-primary-text);
   margin: 0 16px;
-  font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-size-description);
 }
 
 .PaginateList {
   margin: 0 8px;
-  font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-size-description);
 }
 
 .DisabledLink {
   pointer-events: none;
-  color: #9194a5;
+  font-size: var(--color-btn-disabled);
 }
 
 .ActivePage {
-  color: #4460f7;
+  color: var(--color-btn-normal);
   pointer-events: none;
 }

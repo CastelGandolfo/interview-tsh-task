@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { MainLogo } from './Logo.module.css'
 const Logo = () => {
   return (
     <div>
-      <h1 className='mb-0'>join.tsh.io</h1>
+      <h1 className={MainLogo}>join.tsh.io</h1>
     </div>
   )
 }

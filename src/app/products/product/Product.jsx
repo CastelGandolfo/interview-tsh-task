@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Card, Button } from 'react-bootstrap'
+import Btn from 'app/common/buttons/Btn'
 import {
   ImageContainer,
   ProductCard,
@@ -12,7 +13,8 @@ import {
 
 import { showProductDetails } from '../../actions/productActions'
 
-import Rating from '../../common/rating/Rating'
+import Rating from 'app/common/rating/Rating'
+// import Rating from '../../common/rating/Rating'
 
 const Product = ({ product }) => {
   const dispatch = useDispatch()
@@ -39,27 +41,17 @@ const Product = ({ product }) => {
           <div>
             <Rating value={product.rating} />
             {product.active ? (
-              <Button
-                variant='primary'
+              <Btn
                 block
                 className='mt-2'
                 onClick={() => dispatch(showProductDetails(product))}
               >
                 Show details
-              </Button>
+              </Btn>
             ) : (
-              <Button
-                disabled
-                block
-                className='mt-2'
-                style={{
-                  background: '#9194a5',
-                  borderColor: '#9194a5',
-                  fontSize: '14px',
-                }}
-              >
+              <Btn disabled block className='mt-2'>
                 Unavailable
-              </Button>
+              </Btn>
             )}
           </div>
         </div>

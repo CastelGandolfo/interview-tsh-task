@@ -1,0 +1,19 @@
+@import '../../../index.css';
+
+.ButtonFilled {
+  background-color: var(--color-btn-normal);
+  color: var(--color-secondary);
+  font-size: var(--font-size-description);
+  border-radius: 4px;
+  height: var(--basic-button-height);
+}
+
+.ButtonFilled:hover,
+.ButtonFilled:active {
+  background-color: var(--color-btn-hover);
+}
+
+.ButtonFilled:disabled {
+  background-color: var(--color-btn-disabled);
+  border-color: var(--color-btn-disabled);
+}

@@ -33,7 +33,7 @@ const ProductsContainer = () => {
 
   return (
     <Container className='mt-4' style={{ maxWidth: '1300px' }}>
-      <Row className='mr-0 justify-content-between'>
+      <Row className='justify-content-between'>
         {products.map((product, index) => (
           <Col xs={12} sm={6} md={6} lg={3} key={index}>
             <Product product={product} />

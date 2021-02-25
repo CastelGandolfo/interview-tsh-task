@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import BasicModal from '../../common/modal/BasicModal'
+// import BasicModal from 'app/common/modal/BasicModal'
 import { closeProductDetails } from '../../actions/productActions'
 import { ModalSize, ImageContainer, CardInfo } from './ProductModal.module.css'
 

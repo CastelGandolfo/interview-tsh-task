@@ -1,7 +1,10 @@
+@import '../../../index.css';
+
 .BagIcon {
   width: 36px;
   height: 45px;
-  color: #b9bdcf;
+  color: var(--color-secondary-text);
+  /* color: #b9bdcf; */
 }
 
 .CardContainer {
@@ -13,18 +16,15 @@
   border-radius: 8px;
   max-width: 600px;
   height: 344px;
-
-  background-color: #ffffff;
+  background-color: var(--color-secondary);
 }
 
 .TextPrimary {
-  color: #1a1b1d;
-  font-weight: 600;
-  font-size: 18px;
+  color: var(--color-primary-text);
+  font-size: var(--font-size-title);
 }
 
 .TextSecondary {
-  color: #9194a5;
-  font-weight: 600;
-  font-size: 14px;
+  color: var(--color-secondary-text);
+  font-size: var(--font-size-description);
 }

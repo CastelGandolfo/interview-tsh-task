@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Button } from 'react-bootstrap'
+import OutlineBtn from 'app/common/buttons/OutlineBtn'
 import { useHistory, Link } from 'react-router-dom'
 
 import Searchbox from './searchbox/Searchbox'
@@ -13,6 +14,7 @@ import {
   SearchContainer,
   CheckboxesContainer,
   LoginContainer,
+  LoginButton,
 } from './Header.module.css'
 
 const Header = () => {
@@ -34,13 +36,12 @@ const Header = () => {
           <Checkboxes />
         </div>
         <div className={LoginContainer}>
-          <Button
-            variant='outline-primary'
-            className='float-right'
+          <OutlineBtn
+            style={{ width: '88px' }}
             onClick={() => redirectToLogin()}
           >
             Log In
-          </Button>
+          </OutlineBtn>
         </div>
       </Navbar>
     </header>

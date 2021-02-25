@@ -1,14 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Row, Col, Container, Image } from 'react-bootstrap';
+import React from 'react'
+import { Row, Col, Container, Image } from 'react-bootstrap'
 
-import { AppRoute } from '../../routing/AppRoute.enum';
+import { ImgHalfPage } from './Login.module.css'
 
-import { ImgHalfPage } from './Login.module.css';
-
-import FormContainer from '../common/formContainer/FormContainer';
-import LoginForm from './LoginForm';
-import Logo from '../common/logo/Logo';
+import FormContainer from '../common/formContainer/FormContainer'
+import LoginForm from './loginForm/LoginForm'
+import Logo from '../common/logo/Logo'
 
 export const Login = () => {
   return (
@@ -33,5 +30,5 @@ export const Login = () => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
