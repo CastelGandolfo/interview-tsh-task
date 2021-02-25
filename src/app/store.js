@@ -7,11 +7,13 @@ import {
   productDetailsReducer,
 } from './reducers/productReducers'
 import { searchParametersReducer } from './reducers/searchReducers'
+import { userReducer } from './reducers/userReducer'
 
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
   searchParameters: searchParametersReducer,
+  user: userReducer,
 })
 
 const initialState = {}

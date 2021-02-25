@@ -1,5 +1,7 @@
 import React from 'react'
-import { Navbar, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { Navbar, Button, NavDropdown } from 'react-bootstrap'
 import OutlineBtn from 'app/common/buttons/OutlineBtn'
 import { useHistory, Link } from 'react-router-dom'
 
@@ -15,10 +17,15 @@ import {
   CheckboxesContainer,
   LoginContainer,
   LoginButton,
+  Dropdown,
+  Avatar,
 } from './Header.module.css'
 
 const Header = () => {
   let history = useHistory()
+
+  const user = useSelector((state) => state.user)
+  const { loggedUser } = user
 
   const redirectToLogin = () => {
     history.push(`/login`)
@@ -35,14 +42,33 @@ const Header = () => {
         <div className={CheckboxesContainer}>
           <Checkboxes />
         </div>
-        <div className={LoginContainer}>
-          <OutlineBtn
-            style={{ width: '88px' }}
-            onClick={() => redirectToLogin()}
-          >
-            Log In
-          </OutlineBtn>
-        </div>
+        {loggedUser ? (
+          <div className={LoginContainer}>
+            <NavDropdown
+              alignRight
+              className={Dropdown}
+              title={
+                <img
+                  className={Avatar}
+                  src={loggedUser.avatar}
+                  alt={loggedUser.username}
+                />
+              }
+              id='basic-nav-dropdown'
+            >
+              <NavDropdown.Item href='#action/3.1'>Logout</NavDropdown.Item>
+            </NavDropdown>
+          </div>
+        ) : (
+          <div className={LoginContainer}>
+            <OutlineBtn
+              style={{ width: '88px' }}
+              onClickHandler={() => redirectToLogin()}
+            >
+              Log In
+            </OutlineBtn>
+          </div>
+        )}
       </Navbar>
     </header>
   )

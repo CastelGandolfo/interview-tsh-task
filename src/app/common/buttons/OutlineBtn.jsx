@@ -2,13 +2,13 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { ButtonOutline } from './OutlineBtn.module.css'
 
-const OutlineBtn = ({ children, block, disabled }) => {
+const OutlineBtn = ({ children, block, disabled, onClickHandler }) => {
   return (
     <Button
-      variant='outline'
       block={block}
       disabled={disabled}
       className={ButtonOutline}
+      onClick={onClickHandler}
     >
       {children}
     </Button>

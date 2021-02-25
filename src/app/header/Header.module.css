@@ -1,7 +1,7 @@
 @import '../../index.css';
 
 .MainHeader {
-  height: 100px;
+  height: 144px;
   background: var(--color-secondary);
 }
 
@@ -14,6 +14,17 @@
 
 .LoginContainer {
   text-align: right;
+}
+
+.Dropdown::after {
+  content: none !important;
+}
+
+.Avatar {
+  text-align: right;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) {
@@ -32,6 +43,7 @@
   }
   .CheckboxesContainer {
     flex: 1;
+    padding-left: 20px;
   }
 }
 
@@ -58,6 +70,7 @@
   .CheckboxesContainer {
     order: 4;
     width: 100%;
+    padding-left: 0px;
   }
 }
 

@@ -1,0 +1,15 @@
+@import '../../../index.css';
+
+.LoginForm {
+  border: 1px solid var(--color-border-forms);
+  height: var(--basic-button-height);
+  color: #9194a5;
+  border-radius: 8px;
+}
+
+.SubmitButton {
+  margin-top: 40px;
+  height: 48px;
+  font-size: 16px;
+  color: var(--color-secondary);
+}

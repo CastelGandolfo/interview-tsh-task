@@ -49,3 +49,7 @@ body {
   background-color: var(--color-secondary-text);
   font-size: var(--font-size-description);
 }
+
+#basic-nav-dropdown::after {
+  display: none;
+}

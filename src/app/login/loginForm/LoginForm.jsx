@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { LoginInput, SubmitButton } from './LoginForm.module.css'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('')
@@ -15,8 +16,10 @@ const LoginForm = () => {
         Login
       </h1>
       <Form.Group controlId='username'>
-        <Form.Label className='mb-0'>Username</Form.Label>
+        <Form.Label>Username</Form.Label>
         <Form.Control
+          size='lg'
+          className={LoginInput}
           type='text'
           placeholder='Enter username'
           value={username}
@@ -25,8 +28,9 @@ const LoginForm = () => {
       </Form.Group>
 
       <Form.Group controlId='password'>
-        <Form.Label className='mb-0'>Password</Form.Label>
+        <Form.Label className={LoginInput}>Password</Form.Label>
         <Form.Control
+          size='lg'
           type='password'
           placeholder='Enter password'
           value={password}
@@ -34,12 +38,7 @@ const LoginForm = () => {
         ></Form.Control>
       </Form.Group>
 
-      <Button
-        type='submit'
-        variant='primary'
-        block
-        style={{ marginTop: '40px' }}
-      >
+      <Button type='submit' variant='primary' block className={SubmitButton}>
         Sign In
       </Button>
       <a href='#!' className='text-secondary'>

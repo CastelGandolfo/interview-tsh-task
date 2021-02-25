@@ -45,6 +45,20 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+}
+
+.ProductTitle {
+  color: var(--color-primary-text);
+  font-size: var(--font-size-title);
+  height: 27px;
+  overflow: hidden;
+}
+.ProductDescription {
+  color: var(--color-secondary-text);
+  font-size: var(--font-size-description);
+  height: 70px;
+  overflow: hidden;
 }
 
 @media only screen and (max-height: 1100px) and (min-width: 768px) {

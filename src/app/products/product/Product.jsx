@@ -6,6 +6,8 @@ import Btn from 'app/common/buttons/Btn'
 import {
   ImageContainer,
   ProductCard,
+  ProductTitle,
+  ProductDescription,
   CardInfo,
   PromoLabel,
   UnavailableCover,
@@ -35,8 +37,8 @@ const Product = ({ product }) => {
       <Card.Body style={{ padding: '5px 16px 24px 16px' }}>
         <div className={CardInfo}>
           <div>
-            <div className='title'>{product.name}</div>
-            <div className='description'>{product.description}</div>
+            <div className={ProductTitle}>{product.name}</div>
+            <div className={ProductDescription}>{product.description}</div>
           </div>
           <div>
             <Rating value={product.rating} />
@@ -44,7 +46,7 @@ const Product = ({ product }) => {
               <Btn
                 block
                 className='mt-2'
-                onClick={() => dispatch(showProductDetails(product))}
+                onClickHandler={() => dispatch(showProductDetails(product))}
               >
                 Show details
               </Btn>
