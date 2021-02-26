@@ -18,7 +18,7 @@ describe('Basic button functions tests', () => {
       <Btn onClickHandler={onClickHandler}>test btn</Btn>
     )
 
-    fireEvent.click(screen.getByText(/test btn/i))
+    fireEvent.click(getByText(/test btn/i))
 
     expect(onClickHandler).toHaveBeenCalledTimes(1)
   })

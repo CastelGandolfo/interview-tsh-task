@@ -19,12 +19,13 @@ describe('Active/Promo checkboxes tests', () => {
     expect(getByText(/Promo/i)).toBeInTheDocument()
   })
 
-  test('On click active checkbox get new products one time', () => {
+  test('On click active checkbox get new products one time and checked', () => {
     const { getByLabelText } = render(<Checkboxes />)
 
-    const active = getByLabelText(/Promo/i)
+    const active = getByLabelText(/active/i)
     fireEvent.click(active)
 
     expect(mockDispatch).toHaveBeenCalledTimes(1)
+    expect(active.checked).toEqual(true)
   })
 })
