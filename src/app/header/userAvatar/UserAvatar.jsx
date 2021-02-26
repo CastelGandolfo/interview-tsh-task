@@ -3,7 +3,7 @@ import { NavDropdown } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Avatar, Dropdown } from './UserAvatar.module.css'
 
-import { logout } from 'app/actions/userActions'
+import { logout } from '../../actions/userActions'
 
 const UserAvatar = () => {
   const dispatch = useDispatch()

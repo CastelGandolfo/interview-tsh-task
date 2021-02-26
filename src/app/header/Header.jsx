@@ -1,9 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import { Navbar, Button, NavDropdown } from 'react-bootstrap'
-import OutlineBtn from 'app/common/buttons/OutlineBtn'
-import { useHistory, Link } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap'
+import OutlineBtn from '../common/buttons/OutlineBtn'
+import { useHistory } from 'react-router-dom'
 
 import Searchbox from './searchbox/Searchbox'
 import Logo from '../common/logo/Logo'
@@ -17,9 +17,6 @@ import {
   SearchContainer,
   CheckboxesContainer,
   LoginContainer,
-  LoginButton,
-  Dropdown,
-  Avatar,
 } from './Header.module.css'
 
 const Header = () => {

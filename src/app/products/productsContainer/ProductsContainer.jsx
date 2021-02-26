@@ -8,7 +8,7 @@ import EmptyCard from '../../common/emptyCard/EmptyCard'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { listProducts } from '../../actions/productActions'
-import { changeScreenWidth } from 'app/actions/searchActions'
+import { changeScreenWidth } from '../../actions/searchActions'
 
 const ProductsContainer = () => {
   const dispatch = useDispatch()
@@ -19,9 +19,12 @@ const ProductsContainer = () => {
   const { text, promo, active, page, size } = searchParameters
 
   useEffect(() => {
-    dispatch(changeScreenWidth(window.innerWidth))
     dispatch(listProducts(text, promo, active, page, size))
   }, [dispatch, text, promo, active, page, size])
+
+  useEffect(() => {
+    dispatch(changeScreenWidth(window.innerWidth))
+  }, [])
 
   if (loading) {
     return <Loader />

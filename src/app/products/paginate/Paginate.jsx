@@ -1,5 +1,4 @@
 import React from 'react'
-import { Pagination } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeProductsPage } from '../../actions/searchActions'

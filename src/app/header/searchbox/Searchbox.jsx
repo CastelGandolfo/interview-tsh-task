@@ -1,6 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { InputGroup, FormControl, Form, Button } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { Icon, SearchForm, SearchFormContainer } from './Searchbox.module.css'
 

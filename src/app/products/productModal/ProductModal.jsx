@@ -28,7 +28,7 @@ const ProductModal = () => {
       contentClassName={ModalSize}
     >
       <div className={ImageContainer}>
-        <img src={product.image} alt='Product image'></img>
+        <img src={product.image} alt='Product'></img>
       </div>
 
       <div className={CardInfo}>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import { Card, Button } from 'react-bootstrap'
-import Btn from 'app/common/buttons/Btn'
+import { Card } from 'react-bootstrap'
+import Btn from '../../common/buttons/Btn'
 import {
   ImageContainer,
   ProductCard,
@@ -15,7 +15,7 @@ import {
 
 import { showProductDetails } from '../../actions/productActions'
 
-import Rating from 'app/common/rating/Rating'
+import Rating from '../../common/rating/Rating'
 // import Rating from '../../common/rating/Rating'
 
 const Product = ({ product }) => {
@@ -27,7 +27,7 @@ const Product = ({ product }) => {
         {!product.active && <div className={UnavailableCover}></div>}
         {product.promo && <div className={PromoLabel}>Promo</div>}
 
-        <img src={product.image} alt='Product image'></img>
+        <img src={product.image} alt='Product'></img>
       </div>
 
       <Card.Body style={{ padding: '5px 16px 24px 16px' }}>
@@ -41,13 +41,12 @@ const Product = ({ product }) => {
             {product.active ? (
               <Btn
                 block
-                className='mt-2'
                 onClickHandler={() => dispatch(showProductDetails(product))}
               >
                 Show details
               </Btn>
             ) : (
-              <Btn disabled block className='mt-2'>
+              <Btn disabled block>
                 Unavailable
               </Btn>
             )}
