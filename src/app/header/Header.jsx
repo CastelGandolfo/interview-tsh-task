@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Navbar } from 'react-bootstrap'
-import Btn from '../common/buttons/Btn'
+import Btn from '../common/btn/Btn'
 import { useHistory } from 'react-router-dom'
 
 import Searchbox from './searchbox/Searchbox'
