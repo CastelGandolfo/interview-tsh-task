@@ -47,10 +47,10 @@ export const listProducts = (text, promo, active, page, size) => async (
   }
 }
 
-export const showProductDetails = (product) => (dispatch) => {
-  dispatch({ type: SHOW_PRODUCT_DETAILS, payload: product })
+export const showProductDetails = (product) => {
+  return { type: SHOW_PRODUCT_DETAILS, payload: product }
 }
 
-export const closeProductDetails = () => (dispatch) => {
-  dispatch({ type: CLOSE_PRODUCT_DETAILS })
+export const closeProductDetails = () => {
+  return { type: CLOSE_PRODUCT_DETAILS }
 }

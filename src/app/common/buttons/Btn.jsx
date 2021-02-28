@@ -1,13 +1,19 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import { ButtonFilled } from './Btn.module.css'
+import { ButtonFilled, ButtonOutline } from './Btn.module.css'
 
-const Btn = ({ children, block, disabled, onClickHandler }) => {
+const Btn = ({
+  children,
+  block,
+  disabled,
+  onClickHandler,
+  outline = false,
+}) => {
   return (
     <Button
       block={block}
       disabled={disabled}
-      className={ButtonFilled}
+      className={outline ? ButtonOutline : ButtonFilled}
       onClick={onClickHandler}
     >
       {children}

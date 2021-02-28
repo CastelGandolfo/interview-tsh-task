@@ -47,20 +47,22 @@ const unavailableProduct = {
 }
 
 test('Display product card with name and description', () => {
-  const { getByText, queryByText } = render(<Product product={product} />)
+  const { getByText, queryByText, container } = render(
+    <Product product={product} />
+  )
 
   expect(getByText(product.name)).toBeInTheDocument()
   expect(getByText(product.description)).toBeInTheDocument()
   expect(queryByText(/promo/i)).not.toBeInTheDocument()
+  expect(container.getElementsByClassName('fas fa-star').length).toBe(
+    product.rating
+  )
 
   expect(getByText(/show details/i)).toBeInTheDocument()
 })
 
 test('Display promo label on product with promotion', () => {
   const { getByText, queryByText } = render(<Product product={promoProduct} />)
-
-  expect(getByText(product.name)).toBeInTheDocument()
-  expect(getByText(product.description)).toBeInTheDocument()
   expect(queryByText(/promo/i)).toBeInTheDocument()
   expect(getByText(/show details/i)).toBeInTheDocument()
 })
@@ -69,9 +71,6 @@ test('Display unavailable product', () => {
   const { getByText, queryByText } = render(
     <Product product={unavailableProduct} />
   )
-
-  expect(getByText(product.name)).toBeInTheDocument()
-  expect(getByText(product.description)).toBeInTheDocument()
   expect(getByText(/unavailable/i)).toBeInTheDocument()
   expect(queryByText(/promo/i)).not.toBeInTheDocument()
   expect(queryByText(/show details/i)).not.toBeInTheDocument()

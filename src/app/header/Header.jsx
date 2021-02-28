@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Navbar } from 'react-bootstrap'
-import OutlineBtn from '../common/buttons/OutlineBtn'
+import Btn from '../common/buttons/Btn'
 import { useHistory } from 'react-router-dom'
 
 import Searchbox from './searchbox/Searchbox'
@@ -44,12 +44,9 @@ const Header = () => {
           {loggedUser ? (
             <UserAvatar />
           ) : (
-            <OutlineBtn
-              style={{ width: '88px' }}
-              onClickHandler={() => redirectToLogin()}
-            >
+            <Btn outline onClickHandler={() => redirectToLogin()}>
               Log In
-            </OutlineBtn>
+            </Btn>
           )}
         </div>
       </Navbar>

@@ -11,6 +11,10 @@ jest.mock('react-redux', () => ({
   useDispatch: () => mockDispatch,
 }))
 
+afterEach(() => {
+  jest.clearAllMocks()
+})
+
 test('Displays checkboxes with labels Promo and Active', () => {
   const { getByText } = render(<Checkboxes />)
 
@@ -26,4 +30,14 @@ test('On click active checkbox dispatch function to get new products one time an
 
   expect(mockDispatch).toHaveBeenCalledTimes(1)
   expect(active.checked).toEqual(true)
+})
+
+test('On click promo checkbox dispatch function to get new products one time and checked', () => {
+  const { getByLabelText } = render(<Checkboxes />)
+
+  const promo = getByLabelText(/promo/i)
+  fireEvent.click(promo)
+
+  expect(mockDispatch).toHaveBeenCalledTimes(1)
+  expect(promo.checked).toEqual(true)
 })

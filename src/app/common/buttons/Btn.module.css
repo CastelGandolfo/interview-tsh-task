@@ -4,6 +4,7 @@
   background-color: var(--color-btn-normal);
   color: var(--color-secondary);
   font-size: var(--font-size-description);
+  border: none;
   border-radius: 4px;
   height: var(--basic-button-height);
 }
@@ -16,4 +17,27 @@
 .ButtonFilled:disabled {
   background-color: var(--color-btn-disabled);
   border-color: var(--color-btn-disabled);
+}
+
+.ButtonOutline {
+  background-color: var(--color-secondary);
+  color: var(--color-btn-normal);
+  border-color: var(--color-btn-normal);
+  font-size: var(--font-size-description);
+  border-radius: 4px;
+  height: var(--basic-button-height);
+  width: var(--basic-outline-button-width);
+}
+
+.ButtonOutline:hover,
+.ButtonOutline:active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-btn-hover);
+  color: var(--color-btn-hover);
+}
+
+.ButtonOutline:disabled {
+  background-color: var(--color-secondary);
+  border-color: var(--color-btn-disabled);
+  color: var(--color-btn-disabled);
 }

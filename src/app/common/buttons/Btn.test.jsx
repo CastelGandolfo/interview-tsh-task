@@ -22,4 +22,17 @@ describe('Basic button functions tests', () => {
 
     expect(onClickHandler).toHaveBeenCalledTimes(1)
   })
+  test('check if disabled button can not be clicked', () => {
+    const onClickHandler = jest.fn()
+
+    const { getByText } = render(
+      <Btn disabled onClickHandler={onClickHandler}>
+        test btn
+      </Btn>
+    )
+
+    fireEvent.click(getByText(/test btn/i))
+
+    expect(onClickHandler).toHaveBeenCalledTimes(0)
+  })
 })
