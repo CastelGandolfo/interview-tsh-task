@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Card } from 'react-bootstrap'
-import Btn from '../../common/buttons/Btn'
+import Btn from '../../common/btn/Btn'
 import {
   ImageContainer,
   ProductCard,
